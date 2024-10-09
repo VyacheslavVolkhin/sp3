@@ -1,15 +1,253 @@
-@charset "UTF-8";
+.btn {
+	&.button-disabled, &:disabled {
+		background-color: #999CF3;
+		border-color: #999CF3;
+		pointer-events: none;
+	}
+}
+.item-tile-review {
+	display: block;
+	position: relative;
+	min-height: 100%;
+	background: #fff;
+	font-size: 16px;
+	line-height: 21.6px;
+	color: #22252A;
+	padding: 14px;
+	border: 1px solid #F2F2F2;
+	border-radius: 6px;
+	width: 100%;
+	flex: 1;
+	.tile-title-wrap {
+		display: block;
+	}
+	.tile-info-wrap {
+		position: relative;
+		padding: 12px 0 0 42px;
+		&:before {
+			content: "";
+			display: block;
+			width: 28px;
+			height: 22px;
+			position: absolute;
+			background: url(../img/quote.svg) center no-repeat;
+			background-size: 100% auto;
+			top: 12px;left: 0;
+		}
+	}
+	.tile-title {
+		display: inline-block;
+		font-size: 20px;
+		line-height: 27px;
+		font-weight: 400;
+		margin: 0;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #C2D8E3;
+	}
+}
+.content-form-box {
+	margin-bottom: 30px;
+	color: #22252A;
+	position: relative;
+	.form-wrap {
+		max-width: 467px;
+		position: relative;
+		margin: 0 auto;
+		z-index: 2;
+		&:before {
+			content: "";
+			display: block;
+			width: 1184px;
+			height: 258px;
+			background: url(../img/form.svg) center top no-repeat;
+			background-size: 100% auto;
+			position: absolute;
+			top: 50%;left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	.frm-row-submit {
+		padding-top: 15px;
+		text-align: center;
+		.btn {
+			min-width: 260px;
+			height: 44px;
 
-@import 'mixin.less';
-@import 'main.less';
-@import 'structura.less';
-@import 'items.less';
-@import 'content.less';
-@import 'forms.less';
-@import 'common.less';
-@import 'fonts.less';
-/* ----------------------------------- *\
-			icons
-\* ----------------------------------- */
-@import 'icons.less';
-//@import 'animate.less';
+			font-size: 19px;
+		}
+	}
+	.frm-title {
+		display: block;
+		font-size: 24px;
+		line-height: 29px;
+		letter-spacing: 0.76px;
+		text-align: center;
+		font-weight: 400;
+		margin-bottom: 15px;
+		color: #22252A;
+	}
+	.frm-field {
+		margin-bottom: 10px;
+	}
+	.field-info {
+		text-align: center;
+		margin-bottom: 15px;
+		font-size: 12px;
+		line-height: 20px;
+		a {
+			&:not(:hover) {
+				color: inherit;
+			}
+		}
+	}
+	.form-input {
+		background: #fff;
+		border-color: #C2D8E3;
+		padding: 0 10px 0 29px;
+		border-radius: 10px;
+		font-size: 17px;
+		color: #000;
+		height: 50px;
+	}
+	textarea.form-input {
+		padding-top: 15px;
+		height: 207px;
+		line-height: normal;
+	}
+	[placeholder]::-webkit-input-placeholder {color: #22252A;}
+	[placeholder]:-moz-placeholder {color: #22252A;}
+	[placeholder]::-moz-placeholder {color: #22252A;}
+	[placeholder]:-ms-input-placeholder {color: #22252A;}
+}
+
+.tiles-reviews-box {
+	margin-bottom: 30px;
+	.swiper-slide~.swiper-slide {
+		display: flex;
+	}
+	.sl-wrap {
+		min-height: 100%;
+		display: flex; 
+		flex-direction: column;
+	}
+	.slider-wrap {
+		margin: 0 -8px;
+	}
+	.sl-wrap {
+		padding: 0 8px;
+	}
+	.title-inner-wrap {
+		margin-bottom: 30px;
+		text-align: center;
+		.title-wrap {
+			margin-bottom: 10px;
+		}
+		.btn {
+			min-width: 203px;
+			height: 44px;font-size: 19px;
+		}
+		.h1-title {
+			font-size: 24px;
+			line-height: 44px;
+			letter-spacing: 0.76px;
+			font-weight: 400;
+			margin: 0;
+		}
+	}
+	.more-inner-wrap, .button-inner-wrap {
+		text-align: center;
+		margin-top: 15px;
+		font-size: 19px;
+	}
+	.button-inner-wrap {
+		margin-top: 30px;
+		.btn {
+			min-width: 258px;
+		}
+	}
+	.items-wrap {
+		margin: 0 -8px -15px -8px;
+	}
+	.item-wrap {
+		padding: 0 8px;
+		margin-bottom: 15px;
+		width: 100%;
+	}
+}
+@media (min-width: 768px) {
+	.tiles-reviews-box {
+		.title-inner-wrap {
+			text-align: left;
+			display: flex;
+			align-items: center;
+			.title-wrap {
+				margin: 0;
+				flex: 1;
+				padding: 0 15px 0 0;
+			}
+			.action-wrap {
+				flex-shrink: 0;
+			}
+		}
+		.item-wrap {
+			width: 50%;
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.item-tile-review {
+		padding: 3rem;
+		.tile-info-wrap {
+			padding-top: 22px;
+			&:before {
+				top: 22px;
+			}
+		}
+		.tile-title {
+			padding-bottom: 15px;
+		}
+	}
+	.content-form-box {
+		margin-bottom: 100px;
+		.frm-row-submit {
+			.btn {
+				padding: 0 30px;
+				min-width: 0;
+			}
+		}
+	}
+	.tiles-reviews-box {
+		margin-bottom: 10rem;
+		.slider-wrap {
+			margin: 0 -15px;;
+		}
+		.sl-wrap {
+			padding: 0 15px;;
+		}
+		.title-inner-wrap {
+			margin-bottom: 10rem;
+			.h1-title {
+				font-size: 3.8rem;
+				line-height: (43/38);
+			}
+			.btn {
+				min-width: 0;
+				padding: 0 30px;
+			}
+		}
+		.item-wrap {
+			width: 33.33%;
+			padding: 0 15px;
+			margin-bottom: 30px;
+		}
+		.items-wrap {
+			margin: 0 -15px -30px -15px;
+		}
+		.more-inner-wrap {
+			margin-top: 30px;
+		}
+		.button-inner-wrap {
+			margin-top: 9rem;
+		}
+	}
+}
